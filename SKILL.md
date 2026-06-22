@@ -1,7 +1,7 @@
 ---
 name: xuetangx-complete
 description: |
-  学银在线/学堂在线/雨课堂 SPOC 刷课助手。
+  学堂在线（xuetangx.com）/ 雨课堂 SPOC 刷课助手。
   覆盖视频心跳注入(heartbeat POST /video-log/heartbeat/)、
   图文任务点强制"标记看完"(disabled按钮绕过)、
   讨论区自动复制评论发送、
@@ -11,11 +11,11 @@ description: |
   触发词：刷课、视频心跳、标记看完、讨论、作业答题、学堂在线、xuetangx、雨课堂、SPOC
 ---
 
-# 学银在线全流程刷课 Skill
+# 学堂在线全流程刷课 Skill
 
 ## 概述
 
-一个skill覆盖学银在线SPOC课程的所有任务类型：
+一个skill覆盖学堂在线SPOC课程的所有任务类型：
 - **视频**：心跳注入快速完成（不真实播放）
 - **图文**：强制启用"我已看完"disabled按钮
 - **讨论**：复制第一条评论发送
@@ -56,6 +56,7 @@ python3 ~/.hermes/skills/xuetangx-complete/scripts/brush_all.py --cdp-port 9223
 - `c`: 课程ID（从Vue `__vue__.$data.course_id` 读取）
 - `v`: 视频ID（从URL路径 `/video/{id}` 或Vue `__vue__.$data.listName[].id` 读取）
 - `classroomid`: 课堂ID（从Vue或URL解析）
+- `sign`: 课程签名（Vue `course_sign` 或 URL路径）
 - `sp`: 1（伪装1倍速）
 - `et`: play/heartbeat/ended（事件类型序列）
 - `cp`: 当前播放位置（0→duration，线性递增）
