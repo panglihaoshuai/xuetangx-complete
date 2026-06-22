@@ -152,12 +152,24 @@ textarea.dispatchEvent(ev);
 ## 文件结构
 
 ```
-scripts/
-  brush_all.py          # 一键全刷（视频+图文+讨论+作业）
-  heartbeat.py          # 单视频心跳注入
-  article.py            # 单图文标记看完
-  discuss.py            # 单讨论发评论
-  homework.py           # 单作业opencli答题
-  extract_course.py     # 课程信息提取（通用）
-  auto_chrome.py        # CDP自动扫描+接管
+xuetangx-complete/
+├── SKILL.md                    # 本文件
+├── README.md                   # 完整使用说明 + 踩坑记录
+├── requirements.txt            # Python依赖
+├── docs/
+│   ├── development-history.md  # 完整开发历程
+│   └── session-findings.md     # Session关键发现（原样保留）
+├── references/
+│   ├── technical.md            # 技术参考（API/Vue结构/已知坑）
+│   └── homework-opencli.md     # 作业opencli答题指南
+└── scripts/
+    ├── brush_all.py            # 一键全刷（入口）
+    ├── heartbeat.py            # 视频心跳注入
+    ├── article.py              # 图文标记看完
+    ├── discuss.py              # 讨论区发评论
+    ├── homework.py             # 作业opencli答题
+    ├── extract_course.py       # 课程信息提取
+    └── auto_chrome.py          # CDP自动扫描
 ```
+
+**GitHub仓库**: https://github.com/panglihaoshuai/xuetangx-complete
