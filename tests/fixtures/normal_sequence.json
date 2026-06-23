@@ -1,0 +1,8 @@
+{
+  "description": "Valid play -> heartbeat -> ended sequence, duration 120s, 80 heartbeats",
+  "video_id": 100001,
+  "duration": 120.0,
+  "count": 80,
+  "interval_ms": 5000,
+  "heartbeats": []
+}
