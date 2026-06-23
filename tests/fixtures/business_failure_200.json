@@ -1,0 +1,17 @@
+{
+  "description": "Mock server response where http_ok=true but business_accepted=false (rejected sequence)",
+  "http_ok": true,
+  "business_accepted": false,
+  "progress_updated": false,
+  "reason": "invalid_sequence",
+  "received_event_type": "play",
+  "received_cp": 60.0,
+  "received_ts_ms": 1700000005000,
+  "received_sq": 2,
+  "server_state": {
+    "current_cp": 0.0,
+    "accepted_heartbeats": 0,
+    "rejected_heartbeats": 1,
+    "ended_received": false
+  }
+}

@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telemetry-trust-boundary-research"
+version = "0.1.0"
+description = "Web telemetry trust-boundary research harness. Local-only."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Telemetry Research Maintainers" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: Education",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+    "mypy>=1.8",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    "error",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["archived"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "PL"]
+ignore = [
+    "PLR0913",  # allow many args in tests
+    "PLR2004",  # magic values OK in tests
+    "PLR0911",  # too-many-return-statements (state machine has natural branches)
+    "PLR0912",  # too-many-branches
+    "PLR0915",  # too-many-statements
+    "PLC0415",  # import-outside-top-level (lazy imports are intentional)
+    "B905",     # zip-without-explicit-strict (strict=False is the implicit default)
+    "UP042",    # replace-str-enum (str, Enum subclass is documented and clear)
+    "E501",     # line-too-long (allow long docstring-style comments)
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
